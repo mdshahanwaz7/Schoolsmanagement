@@ -6,7 +6,7 @@ dotenv.config();
 
 
 const db = mysql.createConnection(
-process.env.MYSQL_URL
+process.env.mysqlurl
 );
 
 db.query("SELECT DATABASE()", (err, res) => {
