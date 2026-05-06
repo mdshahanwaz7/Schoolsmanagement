@@ -1,11 +1,14 @@
+
+
 import express from 'express'
+
 import db from './config/db.js'
 import cors from 'cors';
 import school from './routes/school.js';
-import dotenv from 'dotenv';
 
 
-dotenv.config();
+
+
 const app = express();
 app.use(cors());
 app.use(express.json());
