@@ -1,18 +1,17 @@
 
+import mysql from 'mysql2';
 import dotenv from 'dotenv';
 dotenv.config();
 
-import mysql from 'mysql2';
+
 
 const db = mysql.createConnection(
-{
-   host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME
-}
+process.env.MYSQL_URL
 );
 
+db.query("SELECT DATABASE()", (err, res) => {
+  console.log("USING DB:", res);
+});
 
 db.connect((err) => {
     if (err) {
